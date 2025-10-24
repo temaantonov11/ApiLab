@@ -1,0 +1,136 @@
+
+.weather-app {
+    max-width: 1500px;
+    margin: 20px auto;
+    text-align: left;
+    background-color: #b1d8ff;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin: 30px 0;
+    justify-content: left;
+}
+
+.city-input {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 550px;
+    transition: border-color 0.3s;
+}
+
+
+.city-input:focus {
+    outline: none;
+    border-color: #74b9ff;
+}
+
+.search-btn {
+    padding: 12px 25px;
+    background: #4bb1fa;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background: #0984e3;
+}
+
+.weather-result {
+    margin-top: 30px;
+    min-height: 200px;
+}
+
+.placeholder {
+    color: #666;
+    font-style: italic;
+}
+
+.weather-card {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(116, 185, 255, 0.3);
+}
+
+.weather-card h2 {
+    margin: 0 0 15px 0;
+    font-size: 24px;
+}
+
+.temperature {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.feels-like {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.weather-description {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.weather-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.weather-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.weather-details {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.weather-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.weather-info div {
+    text-align: center;
+}
+
+.weather-info .label {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.weather-info .value {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.error-message {
+    background: #ff6b6b;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
