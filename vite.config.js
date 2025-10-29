@@ -8,6 +8,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 weather: resolve(__dirname, 'weather.html'),
+                pokemons: resolve(__dirname, 'pokemons.html')
             }
         }
     }
