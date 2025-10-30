@@ -43,7 +43,7 @@ const main = async () => {
         }
     } catch (error) {
         console.error('Ошибка при загрузке покемонов:', error);
-        
+
         const errorMessage = document.createElement('p');
         errorMessage.textContent = 'Не удалось загрузить покемонов. Попробуйте обновить страницу.';
         errorMessage.style.color = 'red';
@@ -54,7 +54,7 @@ const main = async () => {
     }
 }
 
-const displayPokemon = (pokemon_info, pokemonsBlock) => {
+const displayPokemon = (pokemon_info) => {
     const card = document.createElement('div');
     card.className = 'pokemon-card';
 
