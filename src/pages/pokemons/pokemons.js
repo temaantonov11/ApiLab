@@ -36,11 +36,6 @@ const getPokemonInfo = async (pokemon) => {
 
 const main = async () => {
 
-    const pokemonsBlock = document.createElement('div');
-    pokemonsBlock.className = 'pokemons-cards-block';
-
-    document.body.appendChild(pokemonsBlock);
-
     let pokemons = await getPokemons(300);
     for (const pokemon of pokemons) {
         const pokemon_info = await getPokemonInfo(pokemon);
@@ -95,7 +90,7 @@ const displayPokemon = (pokemon_info, pokemonsBlock) => {
 
     card.append(name, img, types, abilities, statsContainer);
 
-    pokemonsBlock.appendChild(card);
+    document.body.appendChild(card);
 
 }
 

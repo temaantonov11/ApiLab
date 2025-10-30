@@ -15,13 +15,6 @@
     transform: scale(1.15);
 }
 
-.pokemons-cards-block {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
 
 .pokemon-icon {
     width: 100px;
