@@ -9,7 +9,8 @@ export default defineConfig({
                 main: resolve(__dirname, 'index.html'),
                 weather: resolve(__dirname, 'weather.html'),
                 pokemons: resolve(__dirname, 'pokemons.html'),
-                crypto: resolve(__dirname, 'crypto.html')
+                crypto: resolve(__dirname, 'crypto.html'),
+                movies: resolve(__dirname, 'movies.html'),
             }
         }
     }

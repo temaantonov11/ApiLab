@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильмы</title>
+    <base href="/ApiLab/">
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/pages/movies/movies.css">
+    <script type="module" src="src/pages/movies/movies.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="weather.html">Погода</a>
+            <a href="movies.html">Фильмы</a>
+            <a href="currency.html">Валюта</a>
+            <a href="pokemons.html">Покемоны</a>
+        </nav>
+        
+        <main class="movies-app">
+            <h1>🎬 Поиск фильмов</h1>
+            
+            <div class="search-section">
+                <input type="text" id="movieInput" placeholder="Введите название фильма (ENG)..." class="movie-input">
+                <button id="searchBtn" class="search-btn">Поиск</button>
+            </div>
+            
+            <div id="moviesResult" class="movies-result">
+                <p class="placeholder">Введите название фильма для поиска</p>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
