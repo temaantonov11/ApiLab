@@ -35,26 +35,19 @@ const getPokemonInfo = async (pokemon) => {
 }
 
 const main = async () => {
-    try {
-        let pokemons = await getPokemons(50);
-        for (const pokemon of pokemons) {
-            const pokemon_info = await getPokemonInfo(pokemon);
-            displayPokemon(pokemon_info);
-        }
-    } catch (error) {
-        console.error('Ошибка при загрузке покемонов:', error);
 
-        const errorMessage = document.createElement('p');
-        errorMessage.textContent = 'Не удалось загрузить покемонов. Попробуйте обновить страницу.';
-        errorMessage.style.color = 'red';
-        errorMessage.style.fontWeight = 'bold';
-        errorMessage.style.textAlign = 'center';
-        errorMessage.style.marginTop = '50px';
-        document.body.appendChild(errorMessage);
-    }
+    const pokemonsBlock = document.createElement('div');
+    pokemonsBlock.className = 'pokemons-cards-block';
+
+    document.body.appendChild(pokemonsBlock);
+
+    let pokemons = await getPokemons(1);
+    const promises = pokemons.map(getPokemonInfo)
+    const pokemonsInfo = await Promise.all(promises);
+    pokemonsInfo.forEach(pokemonInfo => displayPokemon(pokemonInfo, pokemonsBlock));
 }
 
-const displayPokemon = (pokemon_info) => {
+const displayPokemon = (pokemon_info, pokemonsBlock) => {
     const card = document.createElement('div');
     card.className = 'pokemon-card';
 
@@ -101,7 +94,9 @@ const displayPokemon = (pokemon_info) => {
 
     card.append(name, img, types, abilities, statsContainer);
 
-    document.body.appendChild(card);
+    pokemonsBlock.appendChild(card);
+
+    // document.body.appendChild(card);
 
 }
 

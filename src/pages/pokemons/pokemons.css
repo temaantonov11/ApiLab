@@ -15,6 +15,13 @@
     transform: scale(1.15);
 }
 
+.pokemons-cards-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
 
 .pokemon-icon {
     width: 100px;
@@ -63,4 +70,24 @@
   margin: 30px 0 10px 0;
   text-shadow: 3px 3px 0 #2A75BB, 6px 6px 0 rgba(0, 0, 0, 0.2);
   font-family: 'Fredoka One', sans-serif;
+}
+
+@media (max-width: 500px) {
+  .pokemons-cards-block {
+    flex-direction: column; 
+    align-items: center;   
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .pokemon-card {
+    width: 100%;
+    max-width: 250px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .pokemon-card {
+    width: 90%;
+  }
 }
