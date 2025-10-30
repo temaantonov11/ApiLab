@@ -1,3 +1,24 @@
+const typeColorsMapping = {
+    fire: '#F08030',
+    water: '#6890F0',
+    grass: '#78C850',
+    electric: '#F8D030',
+    ice: '#98D8D8',
+    fighting: '#C03028',
+    poison: '#A040A0',
+    ground: '#E0C068',
+    flying: '#A890F0',
+    psychic: '#F85888',
+    bug: '#A8B820',
+    rock: '#B8A038',
+    ghost: '#705898',
+    dark: '#705848',
+    dragon: '#7038F8',
+    steel: '#B8B8D0',
+    fairy: '#EE99AC',
+    normal: '#A8A878'
+};
+
 
 const POKEMONS_API_URL = "https://pokeapi.co/api/v2";
 
@@ -14,16 +35,19 @@ const getPokemonInfo = async (pokemon) => {
 }
 
 const main = async () => {
+
+    const pokemonsBlock = document.createElement('div');
+    pokemonsBlock.className = 'pokemons-cards-block';
+
+    document.body.appendChild(pokemonsBlock);
+
     let pokemons = await getPokemons(300);
-    for (const pokemon of pokemons) {
-        const pokemon_info = await getPokemonInfo(pokemon);
-        displayPokemon(pokemon_info);
-    }
-
-
+    const promises = pokemons.map(getPokemonInfo)
+    const pokemonsInfo = await Promise.all(promises);
+    pokemonsInfo.forEach(pokemonInfo => displayPokemon(pokemonInfo, pokemonsBlock));
 }
 
-const displayPokemon = (pokemon_info) => {
+const displayPokemon = (pokemon_info, pokemonsBlock) => {
     const card = document.createElement('div');
     card.className = 'pokemon-card';
 
@@ -34,6 +58,9 @@ const displayPokemon = (pokemon_info) => {
     img.src = pokemon_info.sprites.front_default;
     img.alt = pokemon_info.name;
     img.className = 'pokemon-icon';
+
+    const mainType = pokemon_info.types[0].type.name;
+    card.style.backgroundColor = typeColorsMapping[mainType] || '#f8f8f8d3';
 
     const types = document.createElement('p');
     types.textContent = 'Type: ' + pokemon_info.types.map(t => t.type.name).join(', ');
@@ -66,7 +93,10 @@ const displayPokemon = (pokemon_info) => {
     });
 
     card.append(name, img, types, abilities, statsContainer);
-    document.body.appendChild(card);
+
+    pokemonsBlock.appendChild(card);
+
+    // document.body.appendChild(card);
 
 }
 
