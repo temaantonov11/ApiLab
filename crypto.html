@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=2.0" />
+  <title>crypto course</title>
+  <!-- Подключаем внешний CSS файл -->
+  <link rel="stylesheet" href="/src/styles/style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>crypto course</h1>
+
+    <div class="crypto-widget">
+      <!-- Выбор криптовалюты -->
+      <div class="input-group">
+        <label for="crypto-select">CRYPTO:</label>
+        <select id="crypto-select">
+          <option value="">tokens are loading...</option>
+        </select>
+      </div>
+
+      <!-- Выбор фиатной валюты -->
+      <div class="input-group">
+        <label for="fiat-select">Сurrency:</label>
+        <select id="fiat-select">
+          <option value="usd">USD</option>
+          <option value="rub">RUB</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Место для вывода результата -->
+    <h2 id="price-result">Select crypto</h2>
+  </div>
+
+  <!-- JS-файл для страницы -->
+  <script type="module" src="/src/crypto.js"></script>
+</body>
+</html>
