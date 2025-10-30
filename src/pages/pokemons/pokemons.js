@@ -35,11 +35,22 @@ const getPokemonInfo = async (pokemon) => {
 }
 
 const main = async () => {
-
-    let pokemons = await getPokemons(50);
-    for (const pokemon of pokemons) {
-        const pokemon_info = await getPokemonInfo(pokemon);
-        displayPokemon(pokemon_info);
+    try {
+        let pokemons = await getPokemons(50);
+        for (const pokemon of pokemons) {
+            const pokemon_info = await getPokemonInfo(pokemon);
+            displayPokemon(pokemon_info);
+        }
+    } catch (error) {
+        console.error('Ошибка при загрузке покемонов:', error);
+        
+        const errorMessage = document.createElement('p');
+        errorMessage.textContent = 'Не удалось загрузить покемонов. Попробуйте обновить страницу.';
+        errorMessage.style.color = 'red';
+        errorMessage.style.fontWeight = 'bold';
+        errorMessage.style.textAlign = 'center';
+        errorMessage.style.marginTop = '50px';
+        document.body.appendChild(errorMessage);
     }
 }
 
