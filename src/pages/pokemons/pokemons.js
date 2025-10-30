@@ -41,7 +41,7 @@ const main = async () => {
 
     document.body.appendChild(pokemonsBlock);
 
-    let pokemons = await getPokemons(50);
+    let pokemons = await getPokemons(1);
     const promises = pokemons.map(getPokemonInfo)
     const pokemonsInfo = await Promise.all(promises);
     pokemonsInfo.forEach(pokemonInfo => displayPokemon(pokemonInfo, pokemonsBlock));
