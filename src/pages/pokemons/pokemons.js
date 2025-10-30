@@ -36,7 +36,7 @@ const getPokemonInfo = async (pokemon) => {
 
 const main = async () => {
 
-    let pokemons = await getPokemons(300);
+    let pokemons = await getPokemons(50);
     for (const pokemon of pokemons) {
         const pokemon_info = await getPokemonInfo(pokemon);
         displayPokemon(pokemon_info);
