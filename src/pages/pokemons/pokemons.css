@@ -72,22 +72,3 @@
   font-family: 'Fredoka One', sans-serif;
 }
 
-@media (max-width: 500px) {
-  .pokemons-cards-block {
-    flex-direction: column; /* колонки сверху вниз */
-    align-items: center;    /* по центру */
-    padding: 10px;
-    gap: 15px;
-  }
-
-  .pokemon-card {
-    width: 100%;
-    max-width: 250px; /* чтобы карточка не растягивалась слишком */
-  }
-}
-
-@media (max-width: 768px) {
-  .pokemon-card {
-    width: 90%;
-  }
-}
