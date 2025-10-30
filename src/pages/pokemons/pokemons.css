@@ -74,13 +74,15 @@
 
 @media (max-width: 500px) {
   .pokemons-cards-block {
-    grid-template-columns: 1fr;
+    flex-direction: column; /* колонки сверху вниз */
+    align-items: center;    /* по центру */
     padding: 10px;
     gap: 15px;
   }
 
   .pokemon-card {
     width: 100%;
+    max-width: 250px; /* чтобы карточка не растягивалась слишком */
   }
 }
 
